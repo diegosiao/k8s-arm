@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<WeatherForecast>;
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the world weather</h1>
+
+    <div>
+        <p><a href="/?continent=asia">Asia</a></p>
+        <p><a href="/?continent=europe">Europe</a></p>
+        <p><a href="/?continent=south-america">South America</a></p>
+    </div>
+
+    <br />
+    <textarea rows="20" style="width: 850px" wrap="soft">
+        @Json.Serialize(Model)
+    </textarea>
+</div>

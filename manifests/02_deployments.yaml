@@ -1,0 +1,186 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: asia-weather
+  name: asia-weather
+  namespace: world
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: asia-weather
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: asia-weather
+    spec:
+      containers:
+      - image: raspberrypi:32000/k8s-sbc-asia-weather:dev
+        imagePullPolicy: Always
+        name: asia-weather
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        ports:
+          - containerPort: 8080
+        command:
+          - dotnet
+          - /app/Kubernetes.Sbc.Asia.Weather.dll
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: europe-weather
+  name: europe-weather
+  namespace: world
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: europe-weather
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: europe-weather
+    spec:
+      containers:
+      - image: raspberrypi:32000/k8s-sbc-europe-weather:dev
+        imagePullPolicy: Always
+        name: europe-weather
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        command:
+          - dotnet
+          - /app/Kubernetes.Sbc.Europe.Weather.dll
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: southamerica-weather
+  name: southamerica-weather
+  namespace: world
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: southamerica-weather
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: southamerica-weather
+    spec:
+      containers:
+      - image: raspberrypi:32000/k8s-sbc-southamerica-weather:dev
+        imagePullPolicy: Always
+        name: southamerica-weather
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        command:
+          - dotnet
+          - /app/Kubernetes.Sbc.SouthAmerica.Weather.dll
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: world-ui
+  name: world-ui
+  namespace: world
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: world-ui
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: world-ui
+    spec:
+      containers:
+      - image: raspberrypi:32000/k8s-sbc-ui-web:dev
+        imagePullPolicy: Always
+        name: world-ui
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        command:
+          - dotnet
+          - /app/Kubernetes.Sbc.Ui.Web.dll
+        env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Development"
+          - name: ROOT_PATH
+            value: "/app/wwwroot/"
+          - name: SERVICE_ASIA_WEATHER
+            value: "http://asia-weather:8080"
+          - name: SERVICE_EUROPE_WEATHER
+            value: "http://europe-weather:8080"
+          - name: SERVICE_SOUTHAMERICA_WEATHER
+            value: "http://southamerica-weather:8080"
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}

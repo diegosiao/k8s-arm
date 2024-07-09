@@ -1,0 +1,6 @@
+@Kubernetes.Sbc.SouthAmerica.Weather_HostAddress = http://localhost:5296
+
+GET {{Kubernetes.Sbc.SouthAmerica.Weather_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,9 @@
+﻿version: 0.1
+
+env:
+- name: SERVICE_ASIA_WEATHER
+  value: http://$(services:asia-weather):8080
+- name: SERVICE_EUROPE_WEATHER
+  value: http://$(services:europe-weather):8080
+- name: SERVICE_SOUTHAMERICA_WEATHER
+  value: http://$(services:southamerica-weather):8080

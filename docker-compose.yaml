@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+
+  k8s-sbc-ui-web:
+    build:
+      context: ./Kubernetes.Sbc.Ui.Web
+    image: raspberrypi:32000/k8s-sbc-ui-web:dev
+    volumes:
+      - "./bin/Release/net8.0/linux-arm64:/app"
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 8080
+
+  k8s-sbc-asia-weather:
+    build:
+      context: ./Kubernetes.Sbc.Asia.Weather
+    image: raspberrypi:32000/k8s-sbc-asia-weather:dev
+    volumes:
+      - "./bin/Release/net8.0/linux-arm64:/app"
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 8080
+
+  k8s-sbc-europe-weather:
+    build:
+      context: ./Kubernetes.Sbc.Europe.Weather
+    image: raspberrypi:32000/k8s-sbc-europe-weather:dev
+    volumes:
+      - "./bin/Release/net8.0/linux-arm64:/app"
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 8080
+
+  k8s-sbc-southamerica-weather:
+    build:
+      context: ./Kubernetes.Sbc.SouthAmerica.Weather
+    image: raspberrypi:32000/k8s-sbc-southamerica-weather:dev
+    volumes:
+      - "./bin/Release/net8.0/linux-arm64:/app"
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 8080

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\USER\git\kubernetes-sbc\Kubernetes.Sbc\Kubernetes.Sbc.Europe.Weather\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2024-06-27T20:47:13.3483040Z||;True|2024-06-27T11:06:25.0428833-03:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

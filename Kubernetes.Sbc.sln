@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kubernetes.Sbc.Asia.Weather", "Kubernetes.Sbc.Asia.Weather\Kubernetes.Sbc.Asia.Weather.csproj", "{30D24C75-50E2-45CB-8F3D-110E6D42BFCD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kubernetes.Sbc.SouthAmerica.Weather", "Kubernetes.Sbc.SouthAmerica.Weather\Kubernetes.Sbc.SouthAmerica.Weather.csproj", "{8456004C-AA3F-4225-86E1-5D53F1746954}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kubernetes.Sbc.Europe.Weather", "Kubernetes.Sbc.Europe.Weather\Kubernetes.Sbc.Europe.Weather.csproj", "{0F93F305-47DE-4171-8CC2-383EB9A24287}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{35465D8D-8FEC-42C3-A5C0-66B2A61B7440}"
+	ProjectSection(SolutionItems) = preProject
+		deploy.ps1 = deploy.ps1
+		docker-compose.yaml = docker-compose.yaml
+		push-all.ps1 = push-all.ps1
+		push.ps1 = push.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "manifests", "manifests", "{8A0D65EE-DD6B-4022-8FC1-333317819088}"
+	ProjectSection(SolutionItems) = preProject
+		manifests\01_configmaps.yaml = manifests\01_configmaps.yaml
+		manifests\02_deployments.yaml = manifests\02_deployments.yaml
+		manifests\03_services.yaml = manifests\03_services.yaml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kubernetes.Sbc.Ui.Web", "Kubernetes.Sbc.Ui.Web\Kubernetes.Sbc.Ui.Web.csproj", "{0DA647CA-090E-4544-B06D-538EBB53CA77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30D24C75-50E2-45CB-8F3D-110E6D42BFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D24C75-50E2-45CB-8F3D-110E6D42BFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D24C75-50E2-45CB-8F3D-110E6D42BFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D24C75-50E2-45CB-8F3D-110E6D42BFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8456004C-AA3F-4225-86E1-5D53F1746954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8456004C-AA3F-4225-86E1-5D53F1746954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8456004C-AA3F-4225-86E1-5D53F1746954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8456004C-AA3F-4225-86E1-5D53F1746954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F93F305-47DE-4171-8CC2-383EB9A24287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F93F305-47DE-4171-8CC2-383EB9A24287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F93F305-47DE-4171-8CC2-383EB9A24287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F93F305-47DE-4171-8CC2-383EB9A24287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA647CA-090E-4544-B06D-538EBB53CA77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA647CA-090E-4544-B06D-538EBB53CA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA647CA-090E-4544-B06D-538EBB53CA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA647CA-090E-4544-B06D-538EBB53CA77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59C51414-51B4-4807-9CB1-87B86E07730B}
+	EndGlobalSection
+EndGlobal

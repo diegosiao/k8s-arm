@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\USER\git\kubernetes-sbc\Kubernetes.Sbc\Kubernetes.Sbc.Asia.Weather\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2024-06-27T20:47:06.8780325Z||;True|2024-06-20T23:18:55.3407055-03:00||;True|2024-06-20T23:15:16.8871905-03:00||;True|2024-06-20T23:05:59.2641004-03:00||;True|2024-06-20T18:00:08.2788397-03:00||;True|2024-06-20T17:47:12.1371025-03:00||;True|2024-06-20T17:30:46.1366133-03:00||;True|2024-06-20T17:24:00.8819270-03:00||;True|2024-06-20T16:52:04.8451917-03:00||;True|2024-06-20T16:45:07.2132612-03:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
