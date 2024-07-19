@@ -1,10 +1,11 @@
 
-cd Kubernetes.Sbc.Asia.Weather 
+docker-compose -f ./docker-compose.yaml build
 
-docker build . -t kubernetessbcasiaweather:dev
+docker push raspberrypi:32000/k8s-sbc-asia-weather:latest
+docker push raspberrypi:32000/k8s-sbc-ui-web:latest
 
-docker tag kubernetessbcasiaweather:dev raspberrypi:32000/kubernetessbcasiaweather:latest
+Write-Host '
 
-docker push raspberrypi:32000/kubernetessbcasiaweather:latest
+	Local images successfully pushed to development registry.
 
-cd ..
+'

@@ -4,11 +4,7 @@
     {
         public static string? ROOT_PATH => nameof(ROOT_PATH).GetEnv();
 
-        public static string? SERVICE_ASIA_WEATHER => nameof(SERVICE_ASIA_WEATHER).GetEnv();
-
-        public static string? SERVICE_EUROPE_WEATHER => nameof(SERVICE_EUROPE_WEATHER).GetEnv();
-
-        public static string? SERVICE_SOUTHAMERICA_WEATHER => nameof(SERVICE_SOUTHAMERICA_WEATHER).GetEnv();
+        public static string? WEATHER_SERVICE => nameof(WEATHER_SERVICE).GetEnv();
 
         private static string? GetEnv(this string key, bool required = true)
         {

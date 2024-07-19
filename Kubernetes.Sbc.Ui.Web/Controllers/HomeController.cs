@@ -27,16 +27,16 @@ namespace Kubernetes.Sbc.Ui.Web.Controllers
             {
                 case "asia":
                     model = await _httpClient
-                        .GetFromJsonAsync<IEnumerable<WeatherForecast>>($"{Env.SERVICE_ASIA_WEATHER}/WeatherForecast");
+                        .GetFromJsonAsync<IEnumerable<WeatherForecast>>($"{Env.WEATHER_SERVICE}/WeatherForecast");
                     break;
-                case "europe":
-                    model = await _httpClient
-                        .GetFromJsonAsync<IEnumerable<WeatherForecast>>($"{Env.SERVICE_EUROPE_WEATHER}/WeatherForecast");
-                    break;
-                case "south-america":
-                    model = await _httpClient
-                        .GetFromJsonAsync<IEnumerable<WeatherForecast>>($"{Env.SERVICE_SOUTHAMERICA_WEATHER}/WeatherForecast");
-                    break;
+                //case "europe":
+                //    model = await _httpClient
+                //        .GetFromJsonAsync<IEnumerable<WeatherForecast>>($"{Env.SERVICE_EUROPE_WEATHER}/WeatherForecast");
+                //    break;
+                //case "south-america":
+                //    model = await _httpClient
+                //        .GetFromJsonAsync<IEnumerable<WeatherForecast>>($"{Env.SERVICE_SOUTHAMERICA_WEATHER}/WeatherForecast");
+                //    break;
             }
 
             return View(model);

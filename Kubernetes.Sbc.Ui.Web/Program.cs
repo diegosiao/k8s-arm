@@ -1,6 +1,4 @@
 using Kubernetes.Sbc.Ui.Web.Utility;
-using Microsoft.Extensions.FileProviders;
-using System;
 
 namespace Kubernetes.Sbc.Ui.Web
 {
@@ -8,7 +6,11 @@ namespace Kubernetes.Sbc.Ui.Web
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder();
+            var builder = WebApplication.CreateBuilder(
+                new WebApplicationOptions
+                {
+                    ContentRootPath = AppContext.BaseDirectory
+                });
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -20,7 +22,9 @@ namespace Kubernetes.Sbc.Ui.Web
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+
+                // The default HSTS value is 30 days.
+                // You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -28,9 +32,7 @@ namespace Kubernetes.Sbc.Ui.Web
 
             Console.Write("Base Directory: ");
             Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
-            Console.WriteLine(Env.SERVICE_ASIA_WEATHER);
-            Console.WriteLine(Env.SERVICE_EUROPE_WEATHER);
-            Console.WriteLine(Env.SERVICE_SOUTHAMERICA_WEATHER);
+            Console.WriteLine(Env.WEATHER_SERVICE);
 
             app.UseStaticFiles();
             app.UseRouting();
