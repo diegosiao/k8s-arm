@@ -5,9 +5,7 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "SERVICE_ASIA_WEATHER": "http://asia-weather:8080",
-        "SERVICE_EUROPE_WEATHER": "http://europe-weather:8080",
-        "SERVICE_SOUTHAMERICA_WEATHER": "http://southamerica-weather:8080"
+        "WEATHER_SERVICE": "http://asia-weather:8080"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5222"
