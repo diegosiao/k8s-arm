@@ -10,5 +10,5 @@ cd .\..\Kubernetes.Sbc.Ui.Web
 cd .\..\scripts
 
 "
-	Container images pushed to local registry
+Container images pushed to local registry
 "

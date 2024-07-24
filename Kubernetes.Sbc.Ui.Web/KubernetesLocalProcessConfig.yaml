@@ -1,6 +1,8 @@
 ﻿version: 0.1
 
 env:
+- name: APP_VERSION
+  value: "1.0.0"
 - name: SERVICE_ASIA_WEATHER
   value: http://$(services:asia-weather):8080
 - name: SERVICE_EUROPE_WEATHER

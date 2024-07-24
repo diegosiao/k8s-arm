@@ -18,6 +18,7 @@ namespace Kubernetes.Sbc.Ui.Web.Controllers
         {
             _logger = logger;
             _httpClient = httpClient;
+            ViewBag.AppVersion = Environment.GetEnvironmentVariable("APP_VERSION");
         }
 
         public async Task<IActionResult> Index(string continent)
