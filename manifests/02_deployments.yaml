@@ -81,7 +81,7 @@ spec:
           - /app/Kubernetes.Sbc.Ui.Web.dll
         env:
           - name: APP_VERSION
-            value: "1.0.1"
+            value: "1.0.0"
           - name: WEATHER_SERVICE
             value: "http://weather-service:8080"
           - name: ASPNETCORE_ENVIRONMENT
