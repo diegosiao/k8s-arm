@@ -24,7 +24,7 @@ spec:
         app: weather-service
     spec:
       containers:
-      - image: raspberrypi:32000/k8s-sbc-weather-service:develop-be90ceb-latest
+      - image: raspberrypi:32000/k8s-sbc-weather-service:develop-49c528b-latest
         imagePullPolicy: Always
         name: weather-service
         resources: {}
@@ -70,7 +70,7 @@ spec:
         app: world-ui
     spec:
       containers:
-      - image: raspberrypi:32000/k8s-sbc-ui-web:develop-be90ceb-latest
+      - image: raspberrypi:32000/k8s-sbc-ui-web:develop-49c528b-latest
         imagePullPolicy: Always
         name: world-ui
         resources: {}

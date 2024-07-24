@@ -2,7 +2,7 @@ param (
     [string]$tag = "$(Get-Date -Format "yyyyMMddHHmmss")"
 )
 
-$image = "raspberrypi:32000/k8s-sbc-weather-service:local-dev-$($tag)"
+$image = "raspberrypi:32000/k8s-sbc-weather-service:develop-$(git rev-parse --short HEAD)-$($tag)"
 
 dotnet publish --configuration Release --runtime linux-arm64
 if ($LASTEXITCODE -ne 0) { Exit 1 }
